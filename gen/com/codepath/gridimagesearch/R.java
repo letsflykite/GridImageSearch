@@ -28,7 +28,7 @@ public final class R {
         public static final int image_width=0x7f040002;
     }
     public static final class drawable {
-        public static final int floral_light=0x7f020000;
+        public static final int floral_light_web=0x7f020000;
         public static final int ic_action_setting=0x7f020001;
         public static final int ic_action_setting_wt=0x7f020002;
         public static final int ic_launcher=0x7f020003;

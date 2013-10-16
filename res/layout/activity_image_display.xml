@@ -15,6 +15,7 @@
 	    android:layout_alignParentLeft="true"
 	    android:layout_alignParentTop="true"
 	    android:maxWidth="600dp"
-	    android:src="@drawable/floral_light" />
+	    android:background="@drawable/floral_light_web"
+/>
 
 </RelativeLayout>

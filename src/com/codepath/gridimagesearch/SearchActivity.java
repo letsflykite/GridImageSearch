@@ -62,13 +62,13 @@ public class SearchActivity extends Activity {
         	}
         });
         
-//        ListView lvItems = (ListView) findViewById(R.id.lvItems);
         gvResults.setOnScrollListener(new EndlessScrollListener() {
 	    @Override
 	    public void onLoadMore(int page, int totalItemsCount) {
                 // Whatever code is needed to append new items to your AdapterView
                 // probably sending out a network request and appending items to your adapter. 
                 // Use the page or the totalItemsCount to retrieve correct data.
+	       	Toast.makeText(getBaseContext(), "Loading More...", Toast.LENGTH_SHORT).show();
 	    	loadDataFromAPI(8, page); 
                 // or customLoadMoreDataFromApi(totalItemsCount); 
 	    }
@@ -92,7 +92,7 @@ public class SearchActivity extends Activity {
     //action bar icon click handler
     public void onSetupFilter(MenuItem mi) {
     	// handle click here
-    	Toast.makeText(this, "Clicked", Toast.LENGTH_LONG).show();
+    	//Toast.makeText(this, "Clicked", Toast.LENGTH_LONG).show();
 		//bring up a window
 		Intent i = new Intent(getApplicationContext(), FilterActivity.class);
 		//bundle parameter
@@ -123,7 +123,7 @@ public class SearchActivity extends Activity {
     
     //search button click handler
     public void onImageSearch(View v) {
-
+      imageResults.clear();
    	  loadDataFromAPI(8, 0);
 //    	Toast.makeText(this, "https://ajax.googleapis.com/ajax/services/search/images?rsz=8&"+
 //    	"start="+0+"&v=1.0&q="+Uri.encode(query), Toast.LENGTH_LONG).show();
@@ -133,7 +133,7 @@ public class SearchActivity extends Activity {
 
 	private void loadDataFromAPI(int rsz, int page) {
     	String query = etQuery.getText().toString();
-    	Toast.makeText(this, "Searching for "+query, Toast.LENGTH_LONG).show();
+//    	Toast.makeText(this, "Searching for "+query, Toast.LENGTH_LONG).show();
     	 
 		AsyncHttpClient client = new AsyncHttpClient();
     	// send out ajax request
@@ -151,7 +151,7 @@ public class SearchActivity extends Activity {
     			//parse the API response: JSONArray
     			try {
     				imageJsonResults = response.getJSONObject("responseData").getJSONArray("results");
-    				imageResults.clear();
+//    				imageResults.clear();
 //    				imageResults.addAll(ImageResult.fromJSONArray(imageJsonResults));
 //    				imageAdapter.notify();
     				imageAdapter.addAll(ImageResult.fromJSONArray(imageJsonResults));
