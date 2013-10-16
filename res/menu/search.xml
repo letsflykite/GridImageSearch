@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/miSettings"
+        android:icon = "@drawable/ic_action_setting_wt"
+        android:onClick="onSetupFilter"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/action_settings">
+    </item>
+
+</menu>
